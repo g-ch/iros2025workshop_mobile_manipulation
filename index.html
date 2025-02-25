@@ -20,9 +20,13 @@
         } */
         header {
             position: relative;
-            height: 500px;
+            height: auto;
+            min-height: 300px;
             text-align: center;
             color: white;
+        }
+        .header-content {
+            padding: 40px 20px;  /* Reduced padding for mobile */
         }
         .header-background {
             position: absolute;
@@ -69,6 +73,10 @@
             list-style: none;
             padding: 0;
         }
+        /* nav ul li {
+            display: inline;
+            margin: 0 15px;
+        } */
         nav ul li {
             display: inline;
             margin: 0 15px;
@@ -90,6 +98,8 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            overflow-x: auto;
+            /* display: block; */
         }
         .schedule-table th, .schedule-table td {
             border: 1px solid #ddd;
@@ -148,6 +158,31 @@
         .show-bio {
             color: #5E35B1;
             cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            .header-content h1 p {
+                font-size: 1.2em !important;  /* Override inline styles */
+            }
+            
+            .header-content h1 p:nth-child(2) {
+                font-size: 0.9em !important;
+            }
+            
+            .header-content h1 p:nth-child(3) {
+                font-size: 0.7em !important;
+            }
+            
+            /* Adjust background images for mobile */
+            .header-image-left, .header-image-right {
+                width: 100%;
+                height: 50%;
+                float: none;
+            }
+            
+            .header-background {
+                flex-direction: column;  /* Stack images vertically on mobile */
+            }
         }
     </style>
     <script>
